@@ -1,0 +1,68 @@
+.card {
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  width: 250px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card h3 {
+  margin: 15px 0;
+}
+
+.card .vote-button button,
+.card .confirm-buttons button {
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: #007bff;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.card .vote-button button:hover,
+.card .confirm-buttons button:hover {
+  background-color: #0056b3;
+}
+
+.card .vote-button button:active,
+.card .confirm-buttons button:active {
+  transform: scale(0.95);
+}
+
+.card .vote-button {
+  margin-top: 20px;
+}
+
+.card .confirm-buttons {
+  margin-top: 20px;
+  display: none;
+}
+
+.card .confirm-buttons button {
+  margin: 5px;
+}
+
+.card.active .vote-button {
+  display: none;
+}
+
+.card.active .confirm-buttons {
+  display: block;
+}

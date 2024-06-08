@@ -1,0 +1,71 @@
+/* Style for the form container */
+.form {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+/* Style for each row in the form */
+.form-row {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+/* Center aligned text */
+.text-center {
+  text-align: center;
+}
+
+/* Style for the form labels */
+.form-label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+/* Style for the form inputs */
+.form-input {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  box-sizing: border-box;
+}
+
+/* Style for the button */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #007bff;
+  border: none;
+  border-radius: 5px;
+}
+
+/* Full-width button */
+.btn-block {
+  width: 100%;
+}
+
+/* Style for the image with fixed width and height */
+.image-fixed {
+  width: 300px;
+  height: 300px;
+  object-fit: cover; /* This ensures the image covers the specified dimensions without distortion */
+}
+
+section {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
