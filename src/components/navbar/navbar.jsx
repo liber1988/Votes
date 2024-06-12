@@ -2,31 +2,66 @@ import React, { useState } from "react";
 import "./navbar.css";
 import { useNavigate } from "react-router-dom";
 
-const Navbar = ({ user }) => {
+const Navbar = ({ logo, user }) => {
   const navigate = useNavigate();
+  const [showBlock, setShowBlock] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
   const handleLogout = () => {
     navigate("/");
   };
   const handleUserButtonClick = () => {
     setShowLogout(!showLogout);
+    setShowBlock(!showBlock);
   };
 
-  return (
-    <nav className="navbar">
-      <img src="../../../public/images/pokemon-23.svg" alt="Logo" />
-      <div
-        className={`user-button ${showLogout ? "active" : ""}`}
-        onClick={handleUserButtonClick}
-      >
-        {user[0].name}
-        <img src={user[0].profilePicture} alt="User" />
-        <button className="logout-button" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
-    </nav>
-  );
+  const handleAdmin = () => {
+    navigate("/admin");
+  };
+
+  if (user.status === "admin") {
+    return (
+      <nav className="navbar">
+        <img src={logo} alt="Logo" />
+        <div
+          className={`user-button ${showLogout ? "active" : ""}`}
+          onClick={handleUserButtonClick}
+        >
+          <img src={user.image} alt="User" />
+          {user.name}
+          {showBlock && (
+            <div className="button-block">
+              <button className="btn btn-admin" onClick={handleAdmin}>
+                Admin
+              </button>
+              <button className="btn btn-logout" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
+      </nav>
+    );
+  } else {
+    return (
+      <nav className="navbar">
+        <img src={logo} alt="Logo" />
+        <div
+          className={`user-button ${showLogout ? "active" : ""}`}
+          onClick={handleUserButtonClick}
+        >
+          <img src={user.image} alt="User" />
+          {user.name}
+          {showBlock && (
+            <div className="button-block">
+              <button className="btn btn-logout" onClick={handleLogout}>
+                Logout
+              </button>
+            </div>
+          )}
+        </div>
+      </nav>
+    );
+  }
 };
 
 export default Navbar;

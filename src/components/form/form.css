@@ -1,4 +1,8 @@
 /* Style for the form container */
+.main-sec {
+  background-color: #02a2ca;
+  height: 100vh;
+}
 .form {
   width: 100%;
   max-width: 400px;
@@ -6,7 +10,7 @@
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f9f9f9;
+  background-color: #0ea894;
 }
 
 /* Style for each row in the form */
@@ -47,7 +51,7 @@
   text-decoration: none;
   outline: none;
   color: #fff;
-  background-color: #007bff;
+  background-color: #045c46;
   border: none;
   border-radius: 5px;
 }
@@ -62,10 +66,38 @@
   width: 300px;
   height: 300px;
   object-fit: cover; /* This ensures the image covers the specified dimensions without distortion */
+  border-radius: 50%;
 }
 
 section {
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal-content .btn {
+  margin-top: 20px;
 }
